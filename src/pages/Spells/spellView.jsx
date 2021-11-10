@@ -2,7 +2,7 @@ import { useRoute } from "@react-navigation/core"
 import React, { useEffect, useState } from "react"
 import { StyleSheet, Text, View, ScrollView, Dimensions } from "react-native"
 import { LoadingIndicator } from "../../components/LoadingIndicator"
-import { spellSchools } from "../../Utils"
+import { damageIcons, spellSchools } from "../../Utils"
 
 export const SpellView = () => {
     const route = useRoute()
@@ -66,7 +66,7 @@ export const SpellView = () => {
                                 <View>
                                     {data.damage.damage_type == undefined ? false : (
                                         <Text>
-                                            Damage Type: {data.damage.damage_type.name}
+                                            Damage Type: {damageIcons[data.damage.damage_type.index]} {data.damage.damage_type.name}
                                         </Text>
                                     )}
                                     {/* Damage at Slot */}
